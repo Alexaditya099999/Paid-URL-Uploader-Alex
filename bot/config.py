@@ -21,7 +21,7 @@ class Config(object):
     API_HASH = os.environ.get("bc79c3bea7a626887bdc0871eecf0327")
     BOT_TOKEN = os.environ.get("8979171607:AAH1-wNBtoCow7cQa9EO0quwjsW21wE65WE")
     DATABASE_NAME = os.environ.get("DATABASE_NAME", "drmtest")
-    DATABASE_URL = os.environ.get("mongodb+srv://alexaditya:alexaditya950@cluster0.7j1hfjk.mongodb.net/?appName=Cluster0", None)
+    DATABASE_URL = os.environ.get("https://t.me/osnitboss", None)
     OWNER_ID = int(os.environ.get("8460497291")
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", ("-1004431674682")
     WEB_SERVER = is_enabled(os.environ.get("WEB_SERVER", "False"), False)
