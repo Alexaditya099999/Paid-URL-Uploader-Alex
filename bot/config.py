@@ -17,8 +17,8 @@ def is_enabled(value, default):
 
 
 class Config(object):
-    API_ID = int(os.environ.get("22544661"))
-    API_HASH = os.environ.get("5dbcbc7c7388e8442f5da278b5914610")
+    API_ID = int(os.environ.get("20346550"))
+    API_HASH = os.environ.get("bc79c3bea7a626887bdc0871eecf0327")
     BOT_TOKEN = os.environ.get("8979171607:AAH1-wNBtoCow7cQa9EO0quwjsW21wE65WE")
     DATABASE_NAME = os.environ.get("DATABASE_NAME", "drmtest")
     DATABASE_URL = os.environ.get("mongodb+srv://alexaditya:alexaditya950@cluster0.7j1hfjk.mongodb.net/?appName=Cluster0", None)
