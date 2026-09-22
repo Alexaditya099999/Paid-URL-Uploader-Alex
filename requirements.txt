@@ -1,5 +1,5 @@
 aiofiles
-aiohttp==3.9.0
+aiohttp==3.8.4
 apscheduler
 async-lru==2.0.2
 beautifulsoup4==4.9.3
@@ -32,5 +32,3 @@ urllib3==2.0.3
 websockets==11.0.3
 yt-dlp==2023.6.22
 ffmpeg-python
-bs4
-

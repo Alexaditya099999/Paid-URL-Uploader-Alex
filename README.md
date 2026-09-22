@@ -1,14 +1,4 @@
-# code wrriten by vspteam
-
-# Deploy Your App to Heroku
-
-[![Deploy to heroku chacha](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/KUSHOFFICIAL7/drm_paid_url)
-
-## Deploy To Google Colab
-
-<a href="https://colab.research.google.com/github/KUSHOFFICIAL7/drm_paid_url/blob/main/drm_paid_url.ipynb" target="_blank">
-  <img src="https://ashutoshgoswami24.github.io/Me/img/gc.png" alt="Deploy To Google Colab" style="width:150px;"/>
-</a>
+[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy/?template=https://github.com/Rahulm9508/My-DRM-Uploader-)
 
 
 # Deploying a Python Script with Requirements and Additional Tools
