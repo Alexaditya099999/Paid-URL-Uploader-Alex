@@ -19,11 +19,11 @@ def is_enabled(value, default):
 class Config(object):
     API_ID = int(os.environ.get("22544661"))
     API_HASH = os.environ.get("5dbcbc7c7388e8442f5da278b5914610")
-    BOT_TOKEN = os.environ.get("7611901718:AAEusvOY57OodWl_WgwcEVm-RiY0MysGMFI")
+    BOT_TOKEN = os.environ.get("8979171607:AAH1-wNBtoCow7cQa9EO0quwjsW21wE65WE")
     DATABASE_NAME = os.environ.get("DATABASE_NAME", "drmtest")
-    DATABASE_URL = os.environ.get("http://t.me/Drmtest1804_bot", None)
-    OWNER_ID = int(os.environ.get("6960427846")
-    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", ("-1002463068122")
+    DATABASE_URL = os.environ.get("mongodb+srv://alexaditya:alexaditya950@cluster0.7j1hfjk.mongodb.net/?appName=Cluster0", None)
+    OWNER_ID = int(os.environ.get("8460497291")
+    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", ("-1004431674682")
     WEB_SERVER = is_enabled(os.environ.get("WEB_SERVER", "False"), False)
     THUMBNAILS = list(map(str, os.environ.get("THUMBNAILS", "").split()))
 
