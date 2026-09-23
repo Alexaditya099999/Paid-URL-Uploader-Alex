@@ -20,7 +20,7 @@ class Config(object):
     # All data hardcoded here so you don't need to add anything on Railway
     API_ID = 20346550
     API_HASH = "bc79c3bea7a626887bdc0871eecf0327"
-    BOT_TOKEN = "8979171607:AAHx9a8p9YtvOjyjyKcT7q87ASVUhN7pj1I"
+    BOT_TOKEN = "8979171607:AAGUQnr_x-LggGvca74AgeDzDBI2QwbB8LM"
     DATABASE_NAME = "drmtest"
     
     # ⚠️ PASTE YOUR MONGODB URL HERE
