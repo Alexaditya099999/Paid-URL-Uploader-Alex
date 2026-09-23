@@ -21,19 +21,6 @@ class ConfigCollection:
         )
         return True
 
-    # Wrapper methods taaki standard MongoDB functions bhi kaam karein
-    async def find_one(self, *args, **kwargs):
-        return await self.collection.find_one(*args, **kwargs)
-        
-    async def update_one(self, *args, **kwargs):
-        return await self.collection.update_one(*args, **kwargs)
-        
-    async def insert_one(self, *args, **kwargs):
-        return await self.collection.insert_one(*args, **kwargs)
-        
-    async def delete_one(self, *args, **kwargs):
-        return await self.collection.delete_one(*args, **kwargs)
-
 
 class Database:
     def __init__(self, client, db_name):
