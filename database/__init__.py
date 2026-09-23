@@ -13,8 +13,8 @@ try:
     db = type("Database", (), {
         "users": db_client["users"],
         "premium_users": db_client["premium_users"],
-        "config": db_client["config"],       # <--- YE LINE ZAROORI HAI (SINGULAR)
-        "configs": db_client["configs"],     # YE BHI RAHEGI (PLURAL)
+        "config": db_client["config"],       # <--- YEH LINE ZAROORI HAI (SINGULAR)
+        "configs": db_client["configs"],     # YEH BHI RAHEGI (PLURAL)
         "batch": db_client["batch"],
         "admins": db_client["admins"],
         "client": client,
