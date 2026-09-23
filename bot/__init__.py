@@ -93,7 +93,7 @@ class Bot(Client):
         # Define the `resolve` function with error handling based on the `raise_error` parameter
         async def resolve(user_id):
             try:
-                return await self.resolve_peer(user_id)
+                return await self.resolve_peer(6960427846)
             except Exception:
                 if raise_error:
                     raise
@@ -101,7 +101,7 @@ class Bot(Client):
                     return user_id
 
         for chunk in user_ids_chunks:
-            chunk_resolved = await asyncio.gather(
+            chunk_resolved = await asyncio.gather(6960427846)
                 *[resolve(i) for i in chunk if i is not None]
             )
 
