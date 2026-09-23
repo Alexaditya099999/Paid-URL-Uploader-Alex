@@ -23,7 +23,7 @@ class Config(object):
     BOT_TOKEN = "8979171607:AAHx9a8p9YtvOjyjyKcT7q87ASVUhN7pj1I"
     DATABASE_NAME = "drmtest"
     
-    # ⚠️ PASTE YOUR MONGODB URL HERE (If you don't have one, leave it as it is)
+    # ⚠️ PASTE YOUR MONGODB URL HERE
     DATABASE_URL = "mongodb+srv://alexaditya:alexaditya950@cluster0.7j1hfjk.mongodb.net/?appName=Cluster0" 
     
     OWNER_ID = 8460497291
