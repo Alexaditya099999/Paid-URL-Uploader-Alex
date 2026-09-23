@@ -1,12 +1,28 @@
-from .users import UserDatabase
+import logging
+from motor.motor_asyncio import AsyncIOMotorClient
 from bot.config import Config
-from .config import ConfigDB
-from .files import FilesDatabase
 
-class Database:
-    def __init__(self):
-        self.users = UserDatabase(Config.DATABASE_URL, Config.DATABASE_NAME)
-        self.config = ConfigDB(Config.DATABASE_URL, Config.DATABASE_NAME)
-        self.files = FilesDatabase(Config.DATABASE_URL, Config.DATABASE_NAME)
+logger = logging.getLogger(__name__)
 
-db = Database()
+try:
+    # MongoDB connection
+    client = AsyncIOMotorClient(Config.DATABASE_URL)
+    db_client = client[Config.DATABASE_NAME]
+
+    # Define all collections used by the bot
+    db = type("Database", (), {
+        "users": db_client["users"],
+        "premium_users": db_client["premium_users"],
+        "config": db_client["config"],       # <--- YE LINE ZAROORI HAI (SINGULAR)
+        "configs": db_client["configs"],     # YE BHI RAHEGI (PLURAL)
+        "batch": db_client["batch"],
+        "admins": db_client["admins"],
+        "client": client,
+        "db": db_client
+    })()
+
+    logger.info("Database connected successfully!")
+
+except Exception as e:
+    logger.error(f"Database connection failed: {e}")
+    raise e
