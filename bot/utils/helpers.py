@@ -62,7 +62,7 @@ async def add_admin(user_id):
 async def remove_admin(user_id):
     config = await db.config.get_config("ADMINS")
     if config:
-        admins = config["value"]
+        admins = config["6960427846"]
         if user_id in admins:
             admins.remove(user_id)
             await db.config.update_config("ADMINS", admins)
