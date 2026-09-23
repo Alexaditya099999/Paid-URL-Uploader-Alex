@@ -1,41 +1,27 @@
-FROM python:3.11-slim
+# Set the base image
+FROM python:3.10.6-slim-buster
 
-ENV PYTHONUNBUFFERED=1 \
-    PYTHONDONTWRITEBYTECODE=1 \
-    DEBIAN_FRONTEND=noninteractive
+# Install required system packages
+RUN apt-get update && \
+    apt-get install -y ffmpeg libsm6 libxext6 curl && \
+    apt-get install -y build-essential python3-dev && \
+    apt-get clean
 
-# ---------- System dependencies ----------
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    aria2 \
-    ffmpeg \
-    wget \
-    curl \
-    unzip \
-    p7zip-full \
-    build-essential \
-    libffi-dev \
-    libssl-dev \
-    && rm -rf /var/lib/apt/lists/*
+# Install yt-dlp
+RUN curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp && \
+    chmod a+rx /usr/local/bin/yt-dlp
 
+# Set the working directory
 WORKDIR /app
 
-# ---------- Python dependencies ----------
+# Copy the requirements file to the working directory
 COPY requirements.txt .
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
 
-# ---------- Baaki code copy ----------
+# Install the Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the rest of the application code
 COPY . .
 
-# ---------- Railway Volume ke liye folders ----------
-RUN mkdir -p /app/data /app/downloads /app/temp
-
-# ---------- Executable permissions ----------
-RUN find /app -type f -name "*.sh" -exec chmod +x {} \; 2>/dev/null || true
-RUN chmod +x /app/binary/linux/* 2>/dev/null || true
-
-# ---------- Railway PORT (agar web server ho) ----------
-EXPOSE 8080
-
-# ---------- Start command ----------
+# Set the command to run the Python script
 CMD ["python", "main.py"]
